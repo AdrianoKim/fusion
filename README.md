@@ -1,9 +1,9 @@
-# fusion
+# new fusion
 
 Modulo usado apenas para testes e aprendizados sobre configurações e contribuições
 em projetos open source
 
-[![Build Status](https://travis-ci.org/AskaVictoria/fusion.svg?branch=main)](https://travis-ci.org/AskaVictoria/fusion) 
+[![Build Status](https://travis-ci.org/AskaVictoria/fusion.svg?branch=main)](https://travis-ci.org/AskaVictoria/fusion)
 
-#try
+
 
