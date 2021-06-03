@@ -1,4 +1,4 @@
-# fusion
+# new fusion
 
 Modulo usado apenas para testes e aprendizados sobre configurações e contribuições
 em projetos open source
