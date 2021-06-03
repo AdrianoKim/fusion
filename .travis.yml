@@ -1,0 +1,13 @@
+language: python
+python:
+  -3.9.4
+install:
+  - pip install -r requirements.txt
+script:
+  - flake8
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github-token: $git_token
+  on:
+    branch: main
