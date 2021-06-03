@@ -6,7 +6,6 @@
   "dist": "xenial",
   "python": [
     "3.9",
-    "3.0"
   ],
   "install": [
     "pip install -r requiremnets.txt"
