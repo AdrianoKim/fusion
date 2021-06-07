@@ -1,7 +1,7 @@
 certifi==2021.5.30
 chardet==4.0.0
 flake8==3.9.2
-idna==2.10
+idna==3.2
 mccabe==0.6.1
 pip-autoremove==0.9.1
 pip-chill==1.0.1
