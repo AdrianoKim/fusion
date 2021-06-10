@@ -25,12 +25,12 @@ standard_exclude_directories = [
 # you can't import this from another package, when you don't know if
 # that package is installed yet.
 def find_package_data(
-    where=".",
-    package="",
-    exclude=standard_exclude,
-    exclude_directories=standard_exclude_directories,
-    only_in_packages=True,
-    show_ignored=False):
+        where=".",
+        package="",
+        exclude=None,
+        exclude_directories=None,
+        only_in_packages=True,
+        show_ignored=False):
     """
     Return a dictionary suitable for use in ``package_data``
     in a distutils ``setup.py`` file.
@@ -50,6 +50,10 @@ def find_package_data(
     Note patterns use wildcards, or can be exact paths (including
     leading ``./``), and all searching is case-insensitive.
     """
+    if exclude_directories is None:
+        exclude_directories = standard_exclude_directories
+    if exclude is None:
+        exclude = standard_exclude
     out = {}
     stack = [(convert_path(where), "", package, only_in_packages)]
     while stack:
@@ -60,17 +64,17 @@ def find_package_data(
                 bad_name = False
                 for pattern in exclude_directories:
                     if (fnmatchcase(name, pattern)
-                        or fn.lower() == pattern.lower()):
+                            or fn.lower() == pattern.lower()):
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
-                                "Directory %s ignored by pattern %s"
-                                % (fn, pattern))
+                            print(sys.stderr, (
+                                    "Directory %s ignored by pattern %s"
+                                    % (fn, pattern)))
                         break
                 if bad_name:
                     continue
                 if (os.path.isfile(os.path.join(fn, "__init__.py"))
-                    and not prefix):
+                        and not prefix):
                     if not package:
                         new_package = name
                     else:
@@ -83,16 +87,16 @@ def find_package_data(
                 bad_name = False
                 for pattern in exclude:
                     if (fnmatchcase(name, pattern)
-                        or fn.lower() == pattern.lower()):
+                            or fn.lower() == pattern.lower()):
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
-                                "File %s ignored by pattern %s"
-                                % (fn, pattern))
+                            print(sys.stderr, (
+                                    "File %s ignored by pattern %s"
+                                    % (fn, pattern)))
                         break
                 if bad_name:
                     continue
-                out.setdefault(package, []).append(prefix+name)
+                out.setdefault(package, []).append(prefix + name)
     return out
 
 
@@ -104,13 +108,12 @@ AUTHOR_EMAIL = "aska.pereira@gmail.com"
 URL = "https://github.com/AskaVictoria/fusion"
 VERSION = __import__(PACKAGE).__version__
 
-
 setup(
     name=NAME,
     version=VERSION,
     description=DESCRIPTION,
     long_description=read('README.md'),
-    long_description_content_type= 'text/markdown',
+    long_description_content_type='text/markdown',
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     license=read('LICENSE'),
@@ -126,7 +129,7 @@ setup(
         "Programming Language :: Python",
         "Framework :: Pytest",
     ],
-    install_requires =[
+    install_requires=[
         'requests'
     ],
     zip_safe=False,
