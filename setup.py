@@ -100,7 +100,7 @@ def find_package_data(
     return out
 
 
-PACKAGE = "fusion"
+PACKAGE = "fusionaskatest"
 NAME = PACKAGE
 DESCRIPTION = "testando instalações"
 AUTHOR = "Aska Victoria"
