@@ -6,6 +6,6 @@ em projetos open source
 [![Build Status](https://travis-ci.com/AskaVictoria/fusion.svg?branch=main)](https://travis-ci.com/AskaVictoria/fusion)
 [![Updates](https://pyup.io/repos/github/AdrianoKim/fusion/shield.svg)](https://pyup.io/repos/github/AdrianoKim/fusion/)
 [![Python 3](https://pyup.io/repos/github/AdrianoKim/fusion/python-3-shield.svg)](https://pyup.io/repos/github/AdrianoKim/fusion/)
-
+[![codecov](https://codecov.io/gh/AskaVictoria/fusion/branch/main/graph/badge.svg?token=WQLT27EUPH)](https://codecov.io/gh/AskaVictoria/fusion)
 
 
