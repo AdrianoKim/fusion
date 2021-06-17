@@ -9,6 +9,6 @@ install:
   - pip install -r requirements.txt codecov
 script:
   - flake8
-  - pytest fusion --cov=fusion
+  - pytest fusion --cov=fusionaskatest
 after_success:
   - codecov
