@@ -6,7 +6,9 @@ python:
   - 3.8
   - 3.9
 install:
-  - pip install -r requirements.txt
+  - pip install -r requirements.txt codecov
 script:
   - flake8
-  - pytest fusionaskatest
+  - pytest fusionaskatest --cov=fusionaskatest
+after_success:
+  - codecov
