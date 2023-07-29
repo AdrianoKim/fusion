@@ -1,4 +1,4 @@
-flake8==3.9.2
+flake8==6.1.0
 fusionaskatest==0.1
 pip-autoremove==0.9.1
 pip-chill==1.0.1
